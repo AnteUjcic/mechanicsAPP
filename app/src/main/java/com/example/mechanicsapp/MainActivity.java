@@ -1,22 +1,20 @@
 package com.example.mechanicsapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
-import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-     AppDatabase appDatabase;
-     EditText username, password;
-     Button signing;
+    private EditText username, password;
+    private Button signing;
+    private AppDatabase appDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,25 +23,53 @@ public class MainActivity extends AppCompatActivity {
         username = findViewById(R.id.txtUsernameInput);
         password = findViewById(R.id.txtPasswordInput);
         signing = findViewById(R.id.btnPrijava);
+
+        // Initialize the database
+        appDatabase = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "mechanicsDB").build();
+
         signing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String inputUsername = username.getText().toString().trim();
                 String inputPassword = password.getText().toString().trim();
 
-                // Check if the entered username and password match the hardcoded values
+                // Check if the entered username and password match the hardcoded admin credentials
                 if (inputUsername.equals("admin") && inputPassword.equals("admin")) {
                     // Successful login
                     Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                    // You can start a new activity here if needed
-                    // Intent intent = new Intent(MainActivity.this, NextActivity.class);
-                    // startActivity(intent);
+                    // Start AdminScreen activity
+                    Intent intent = new Intent(MainActivity.this, AdminScreen.class);
+                    startActivity(intent);
                 } else {
-                    // Login failed
-                    Toast.makeText(MainActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
+                    // Check if the entered username and password match the database records
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            LoginInfo user = appDatabase.loginDao().login(inputUsername, inputPassword);
+                            if (user != null) {
+                                // Successful login
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                                        // Start AdminScreen activity
+                                        Intent intent = new Intent(MainActivity.this, HomePage.class);
+                                        startActivity(intent);
+                                    }
+                                });
+                            } else {
+                                // Login failed
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(MainActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                            }
+                        }
+                    }).start();
                 }
             }
         });
     }
-
 }

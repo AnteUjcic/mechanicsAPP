@@ -10,8 +10,6 @@ public interface WorkerDao {
     @Insert
     void insert(Worker worker);
 
-    @Query("SELECT * FROM worker")
-    List<Worker> getAllWorkers();
-
-    // Add other queries as needed
+    @Query("SELECT * FROM worker WHERE oib = :oib LIMIT 1")
+    Worker findWorkerByOIB(long oib);
 }

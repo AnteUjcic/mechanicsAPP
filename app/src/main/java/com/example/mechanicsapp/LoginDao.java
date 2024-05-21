@@ -18,5 +18,4 @@ public interface LoginDao {
 
     @Query("SELECT * FROM login_info WHERE username = :username LIMIT 1")
     LoginInfo getUserByUsername(String username);
-
 }
