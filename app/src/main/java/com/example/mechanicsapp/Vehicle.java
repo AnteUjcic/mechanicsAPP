@@ -1,15 +1,16 @@
 package com.example.mechanicsapp;
-import java.util.Collection;
-import java.util.ArrayList;
-public class Vehicle {
-    public int IDVehicle;
-    public String Brand;
-    public int Year;
-    public int NumberOfWheels;
-    public String EngineType;
-    public int NumberOfDoors;
-    public String BodyStyle;
-    public String DriveType;
-    public Collection<Service> services = new ArrayList<Service>();
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+@Entity(tableName = "vehicle")
+public class Vehicle {
+    @PrimaryKey
+    public int idVehicle;
+    public String brand;
+    public int year;
+    public int numberOfWheels;
+    public String engineType;
+    public int numberOfDoors;
+    public String bodyStyle;
+    public String driveType;
 }

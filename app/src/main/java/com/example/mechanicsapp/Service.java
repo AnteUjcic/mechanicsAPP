@@ -1,17 +1,27 @@
 package com.example.mechanicsapp;
-
-import java.util.Date;
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
+import java.time.LocalDate;
+@Entity(tableName = "service",
+        foreignKeys = {
+                @ForeignKey(entity = Worker.class,
+                        parentColumns = "oib",
+                        childColumns = "workerOIB"),
+                @ForeignKey(entity = Vehicle.class,
+                        parentColumns = "idVehicle",
+                        childColumns = "vehicleId")
+        })
 
 public class Service {
-    public String ServiceType;
-    public Date DateOfservice;
-    public double KMService;
-    public double NextKMService;
+    @PrimaryKey(autoGenerate = true)
+    public int serviceId;
 
-    public long OIB;
-    public Worker Worker;
+    public String serviceType;
+    public LocalDate dateOfService;
+    public double kmService;
+    public double nextKmService;
+    public long oib;
 
-    public int IDVehicle;
-    public Vehicle Vehicle;
-
+    public int vehicleId;
 }

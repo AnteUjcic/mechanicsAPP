@@ -1,12 +1,12 @@
 package com.example.mechanicsapp;
-import java.util.Collection;
-import java.util.ArrayList;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "worker")
 public class Worker {
-    public long OIB;
-    public String WorkerName;
-    public String WorkerSurname;
-    public LoginInfo LoginInfo;
-    public Collection<Service> Services = new ArrayList<Service>();
-
-
+    @PrimaryKey
+    public long oib;
+    public String workerName;
+    public String workerSurname;
+    // Assuming LoginInfo is a separate entity
 }
