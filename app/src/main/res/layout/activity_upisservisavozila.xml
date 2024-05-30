@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".UpisServisa">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/editTextServiceType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tip servisa" />
+
+    <EditText
+        android:id="@+id/editTextDateOfService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Datum servisa (yyyy-MM-dd)" />
+
+    <EditText
+        android:id="@+id/editTextKmService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Km na servisu"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/editTextNextKmService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Sljedeci Km servis"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/editTextOIB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="OIB od mehanicara"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editTextVehicleId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID vozila"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btnAddService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dodaj servis" />
+
+    <Button
+        android:id="@+id/btnBackToAdminFromAddService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back" />
+</LinearLayout>

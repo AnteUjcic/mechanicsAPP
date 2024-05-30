@@ -46,18 +46,15 @@ public class MainActivity extends AppCompatActivity {
                         public void run() {
                             LoginInfo user = appDatabase.loginDao().login(inputUsername, inputPassword);
                             if (user != null) {
-
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
                                         Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-
                                         Intent intent = new Intent(MainActivity.this, HomePage.class);
                                         startActivity(intent);
                                     }
                                 });
                             } else {
-
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
