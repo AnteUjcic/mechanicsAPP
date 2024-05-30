@@ -5,6 +5,8 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import java.util.List;
 import androidx.room.OnConflictStrategy;
+import androidx.room.Delete;
+
 
 
 @Dao

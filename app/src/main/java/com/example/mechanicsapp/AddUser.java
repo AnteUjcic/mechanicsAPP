@@ -1,5 +1,6 @@
 package com.example.mechanicsapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,11 +14,12 @@ import androidx.room.Room;
 public class AddUser extends AppCompatActivity {
     private EditText editTextUsername, editTextPassword, editOIB, editTextName, editTextSurname;
     private Button btnAddUser;
+    private  Button btnBack;
     private AppDatabase appDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Call the correct superclass method
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adduser);
 
@@ -27,11 +29,18 @@ public class AddUser extends AppCompatActivity {
         editTextName = findViewById(R.id.txtUnosImenaKorisnika);
         editTextSurname = findViewById(R.id.txtUnosPrezimenaKorisnika);
         btnAddUser = findViewById(R.id.btnAddUser);
+        btnBack=findViewById(R.id.btnBackToAdminFromAdduser);
 
         appDatabase = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "mechanicsDB")
                 .fallbackToDestructiveMigration()
                 .build();
-
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddUser.this, AdminScreen.class);
+                startActivity(intent);
+            }
+        });
         btnAddUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,7 +59,6 @@ public class AddUser extends AppCompatActivity {
                             Worker existingWorker = appDatabase.workerDao().findWorkerByOIB(workerOIB);
 
                             if (existingWorker == null) {
-                                // If worker doesn't exist, create a new worker
                                 Worker newWorker = new Worker();
                                 newWorker.oib = workerOIB;
                                 newWorker.workerName = name;
@@ -64,7 +72,6 @@ public class AddUser extends AppCompatActivity {
                             newUser.oib = workerOIB;
                             long result = appDatabase.loginDao().insert(newUser);
                             if (result == -1) {
-                                // Handle duplicate entry
                                 Log.e("AddUser", "Duplicate entry detected");
                             } else {
                                 Log.i("AddUser", "User added successfully");
@@ -82,6 +89,7 @@ public class AddUser extends AppCompatActivity {
                 } else {
                     Toast.makeText(AddUser.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
     }

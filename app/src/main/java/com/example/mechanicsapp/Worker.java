@@ -14,4 +14,8 @@ public class Worker {
     public List<Service> services;
     @Ignore
     public LoginInfo loginInfo;
+    @Override
+    public String toString() {
+        return workerName + " " + workerSurname;
+    }
 }

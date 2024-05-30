@@ -12,6 +12,7 @@
         android:theme="@style/Theme.MechanicsAPP"
         tools:targetApi="31">
 
+        <activity android:name=".PregledKorisnika"></activity>
         <activity android:name=".DeleteUser"></activity>
         <activity android:name=".HomePage"></activity>
         <activity android:name=".AddUser"></activity>

@@ -42,5 +42,13 @@ public class AdminScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btnPregledKorisnika.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AdminScreen.this, PregledKorisnika.class);
+                startActivity(intent);
+            }
+        });
     }
 }

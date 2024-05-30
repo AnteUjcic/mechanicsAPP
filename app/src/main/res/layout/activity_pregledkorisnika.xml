@@ -5,8 +5,21 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <Button
+        android:id="@+id/btnRefresh"
+        android:layout_width="111dp"
+        android:layout_height="wrap_content"
+        android:text="Refresh" />
+
+    <Button
+        android:id="@+id/btnBackToAdminScreen"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:text="Back" />
+
     <ListView
         android:id="@+id/listViewUsers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
 </LinearLayout>
