@@ -8,13 +8,10 @@ import java.util.List;
 public class Worker {
     @PrimaryKey
     public long oib;
-
     public String workerName;
     public String workerSurname;
-
     @Ignore
     public List<Service> services;
-
     @Ignore
     public LoginInfo loginInfo;
 }

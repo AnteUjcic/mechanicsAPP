@@ -15,16 +15,13 @@ import java.util.Date;
                         parentColumns = "idVehicle",
                         childColumns = "vehicleId")
         })
-
 public class Service {
     @PrimaryKey(autoGenerate = true)
     public int serviceId;
-
     public String serviceType;
     public Date dateOfService;
     public double kmService;
     public double nextKmService;
     public long oib;
-
     public int vehicleId;
 }

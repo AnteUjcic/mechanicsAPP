@@ -1,13 +1,14 @@
 package com.example.mechanicsapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
-
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 public class AddUser extends AppCompatActivity {
     private EditText editTextUsername, editTextPassword, editOIB, editTextName, editTextSurname;
@@ -16,6 +17,7 @@ public class AddUser extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Call the correct superclass method
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adduser);
 
@@ -26,8 +28,9 @@ public class AddUser extends AppCompatActivity {
         editTextSurname = findViewById(R.id.txtUnosPrezimenaKorisnika);
         btnAddUser = findViewById(R.id.btnAddUser);
 
-        // Initialize the database
-        appDatabase = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "mechanicsDB").build();
+        appDatabase = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "mechanicsDB")
+                .fallbackToDestructiveMigration()
+                .build();
 
         btnAddUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +42,7 @@ public class AddUser extends AppCompatActivity {
                 Long OIB = Long.parseLong(editOIB.getText().toString());
 
                 if (!username.isEmpty() && !password.isEmpty() && !name.isEmpty() && !surname.isEmpty()) {
-                    // Add user to the database
+
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
@@ -59,7 +62,13 @@ public class AddUser extends AppCompatActivity {
                             newUser.username = username;
                             newUser.password = password;
                             newUser.oib = workerOIB;
-                            appDatabase.loginDao().insert(newUser);
+                            long result = appDatabase.loginDao().insert(newUser);
+                            if (result == -1) {
+                                // Handle duplicate entry
+                                Log.e("AddUser", "Duplicate entry detected");
+                            } else {
+                                Log.i("AddUser", "User added successfully");
+                            }
 
                             runOnUiThread(new Runnable() {
                                 @Override

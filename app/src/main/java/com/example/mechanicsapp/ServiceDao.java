@@ -13,5 +13,4 @@ public interface ServiceDao {
     @Query("SELECT * FROM service")
     List<Service> getAllServices();
 
-    // Add other queries as needed
 }

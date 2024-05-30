@@ -12,4 +12,6 @@ public interface WorkerDao {
 
     @Query("SELECT * FROM worker WHERE oib = :oib LIMIT 1")
     Worker findWorkerByOIB(long oib);
+    @Query("DELETE FROM worker WHERE oib = :oib")
+    void deleteByOib(long oib);
 }

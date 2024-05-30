@@ -22,12 +22,25 @@ public class AdminScreen extends AppCompatActivity {
         btnDodajKorisnika.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Start AddUser activity
+
                 Intent intent = new Intent(AdminScreen.this, AddUser.class);
                 startActivity(intent);
             }
         });
+        btnAdminLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminScreen.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnBrisanjeKorisnika.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        // Implement other button click listeners as needed
+                Intent intent = new Intent(AdminScreen.this, DeleteUser.class);
+                startActivity(intent);
+            }
+        });
     }
 }

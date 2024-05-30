@@ -13,5 +13,4 @@ public interface VehicleDao {
     @Query("SELECT * FROM vehicle")
     List<Vehicle> getAllVehicles();
 
-    // Add other queries as needed
 }

@@ -8,11 +8,10 @@ import androidx.room.PrimaryKey;
                 parentColumns = "oib",
                 childColumns = "oib"))
 public class LoginInfo {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     public long idLogin;
     public String username;
     public String password;
 
     public long oib;
-
 }

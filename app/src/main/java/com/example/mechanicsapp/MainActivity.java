@@ -33,32 +33,31 @@ public class MainActivity extends AppCompatActivity {
                 String inputUsername = username.getText().toString().trim();
                 String inputPassword = password.getText().toString().trim();
 
-                // Check if the entered username and password match the hardcoded admin credentials
                 if (inputUsername.equals("admin") && inputPassword.equals("admin")) {
-                    // Successful login
+
                     Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                    // Start AdminScreen activity
+
                     Intent intent = new Intent(MainActivity.this, AdminScreen.class);
                     startActivity(intent);
                 } else {
-                    // Check if the entered username and password match the database records
+
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
                             LoginInfo user = appDatabase.loginDao().login(inputUsername, inputPassword);
                             if (user != null) {
-                                // Successful login
+
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
                                         Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                                        // Start AdminScreen activity
+
                                         Intent intent = new Intent(MainActivity.this, HomePage.class);
                                         startActivity(intent);
                                     }
                                 });
                             } else {
-                                // Login failed
+
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
