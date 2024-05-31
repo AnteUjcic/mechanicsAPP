@@ -7,8 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class HomePage extends AppCompatActivity {
-    private Button btnLogoutUser,btnAddVehicle,btnPregledVozila,btnAddService;
-
+    private Button btnLogoutUser,btnAddVehicle,btnPregledVozila,btnAddService,btnPregledServisa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,7 +16,7 @@ public class HomePage extends AppCompatActivity {
         btnLogoutUser = findViewById(R.id.btnLogoutUser);
         btnPregledVozila = findViewById(R.id.btnPregledVozila);
         btnAddService = findViewById(R.id.btnUpisServisa);
-
+        btnPregledServisa=findViewById(R.id.btnPregledServisa);
         btnLogoutUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,6 +43,13 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomePage.this, UpisServisa.class);
+                startActivity(intent);
+            }
+        });
+        btnPregledServisa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomePage.this, PregledServisa.class);
                 startActivity(intent);
             }
         });

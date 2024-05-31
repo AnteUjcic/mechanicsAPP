@@ -12,7 +12,7 @@
         android:theme="@style/Theme.MechanicsAPP"
         tools:targetApi="31">
 
-
+        <activity android:name=".PregledServisa"></activity>
         <activity android:name=".UpisServisa"></activity>
         <activity android:name=".PregledVozila"></activity>
         <activity android:name=".UpisNovogVozila"></activity>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/txtServiceType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tip servisa"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtDateOfService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datum servisa" />
+
+    <TextView
+        android:id="@+id/txtKmService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Km na servisu" />
+
+    <TextView
+        android:id="@+id/txtNextKmService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sljedeci servis" />
+
+    <TextView
+        android:id="@+id/txtOIB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OIB radnika" />
+
+    <TextView
+        android:id="@+id/txtVehicleId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID vozila" />
+</LinearLayout>
