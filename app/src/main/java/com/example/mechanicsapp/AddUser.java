@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
-
 public class AddUser extends AppCompatActivity {
     private EditText editTextUsername, editTextPassword, editOIB, editTextName, editTextSurname;
     private Button btnAddUser;

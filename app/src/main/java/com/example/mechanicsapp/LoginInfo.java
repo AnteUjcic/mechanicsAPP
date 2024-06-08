@@ -13,6 +13,7 @@ public class LoginInfo {
     public String username;
     public String password;
     public long oib;
+
     @Override
     public String toString() {
         return username;
