@@ -35,9 +35,9 @@ public class WorkerDaoDeleteTest {
     @Test
     public void testDeleteWorker() {
         Worker worker = new Worker();
-        worker.oib = 12345678901L;
-        worker.workerName = "John";
-        worker.workerSurname = "Doe";
+        worker.oib = 1234546901L;
+        worker.workerName = "Ante";
+        worker.workerSurname = "Ujcic";
         workerDao.insert(worker);
 
         workerDao.deleteByOib(12345678901L);

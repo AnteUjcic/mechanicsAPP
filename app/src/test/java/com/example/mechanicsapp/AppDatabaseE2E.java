@@ -27,7 +27,7 @@ public class AppDatabaseE2E {
                         ApplicationProvider.getApplicationContext(),
                         AppDatabase.class
                 )
-                .allowMainThreadQueries()  // Allow queries on the main thread for testing purposes
+                .allowMainThreadQueries()
                 .build();
         workerDao = appDatabase.workerDao();
         vehicleDao = appDatabase.vehicleDao();
@@ -43,7 +43,7 @@ public class AppDatabaseE2E {
     public void testAddWorkerVehicleAndService() {
 
         Worker worker = new Worker();
-        worker.oib = 12345678901L;
+        worker.oib = 12341238901L;
         worker.workerName = "Ante";
         worker.workerSurname = "Ujcic";
         workerDao.insert(worker);

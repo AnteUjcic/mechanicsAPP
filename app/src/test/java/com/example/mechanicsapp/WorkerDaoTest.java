@@ -22,7 +22,7 @@ public class WorkerDaoTest {
                         ApplicationProvider.getApplicationContext(),
                         AppDatabase.class
                 )
-                .allowMainThreadQueries()  // Allow queries on the main thread for testing purposes
+                .allowMainThreadQueries()
                 .build();
         workerDao = appDatabase.workerDao();
     }
@@ -35,9 +35,9 @@ public class WorkerDaoTest {
     @Test
     public void testInsertAndFindWorker() {
         Worker worker = new Worker();
-        worker.oib = 12345678901L;
-        worker.workerName = "John";
-        worker.workerSurname = "Doe";
+        worker.oib = 12345675701L;
+        worker.workerName = "Ante";
+        worker.workerSurname = "Ujcic";
         workerDao.insert(worker);
 
         Worker foundWorker = workerDao.findWorkerByOIB(12345678901L);

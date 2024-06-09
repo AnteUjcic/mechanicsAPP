@@ -23,7 +23,7 @@ public class VehicleDaoTest {
                         ApplicationProvider.getApplicationContext(),
                         AppDatabase.class
                 )
-                .allowMainThreadQueries()  // Allow queries on the main thread for testing purposes
+                .allowMainThreadQueries()
                 .build();
         vehicleDao = appDatabase.vehicleDao();
     }

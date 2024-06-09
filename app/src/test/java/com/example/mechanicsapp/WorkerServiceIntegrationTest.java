@@ -28,7 +28,7 @@ public class WorkerServiceIntegrationTest {
                         ApplicationProvider.getApplicationContext(),
                         AppDatabase.class
                 )
-                .allowMainThreadQueries()  // Allow queries on the main thread for testing purposes
+                .allowMainThreadQueries()
                 .build();
         workerDao = appDatabase.workerDao();
         vehicleDao = appDatabase.vehicleDao();
@@ -43,7 +43,7 @@ public class WorkerServiceIntegrationTest {
     @Test
     public void testInsertServiceWithWorkerAndVehicle() {
         Worker worker = new Worker();
-        worker.oib = 12345678901L;
+        worker.oib = 12345645901L;
         worker.workerName = "Antonio";
         worker.workerSurname = "Ereiz";
         workerDao.insert(worker);
@@ -79,7 +79,7 @@ public class WorkerServiceIntegrationTest {
     public void testDeleteServiceWithWorkerAndVehicle() {
 
         Worker worker = new Worker();
-        worker.oib = 12345678901L;
+        worker.oib = 12335678901L;
         worker.workerName = "Antonio";
         worker.workerSurname = "Ereiz";
         workerDao.insert(worker);
