@@ -13,6 +13,7 @@ import androidx.room.Room;
 
 import java.util.List;
 
+
 public class PregledVozila extends AppCompatActivity {
     private ListView listViewVehicles;
     private AppDatabase appDatabase;

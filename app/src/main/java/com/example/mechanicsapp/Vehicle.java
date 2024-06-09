@@ -4,6 +4,7 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "vehicle")
 public class Vehicle {
+    
     @PrimaryKey
     public int idVehicle;
     public String brand;
