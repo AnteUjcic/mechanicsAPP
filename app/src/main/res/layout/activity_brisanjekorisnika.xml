@@ -12,14 +12,20 @@
         android:id="@+id/editTextNumber"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:hint="Enter OIB"
+        android:hint="Unesite OIB"
         android:inputType="number" />
 
     <Button
         android:id="@+id/btnDeleteUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Delete User"
+        android:text="Brisi korisnika"
         android:visibility="visible" />
+
+    <Button
+        android:id="@+id/btnReturnToAdminFromDeleteUser"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="Back" />
 
 </LinearLayout>

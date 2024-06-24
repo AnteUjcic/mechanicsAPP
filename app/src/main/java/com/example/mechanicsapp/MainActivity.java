@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         password = findViewById(R.id.txtPasswordInput);
         signing = findViewById(R.id.btnPrijava);
 
-        // Initialize the database
+
         appDatabase = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "mechanicsDB").build();
 
         signing.setOnClickListener(new View.OnClickListener() {
@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
                     Intent intent = new Intent(MainActivity.this, AdminScreen.class);
                     startActivity(intent);
+
                 } else {
 
                     new Thread(new Runnable() {
