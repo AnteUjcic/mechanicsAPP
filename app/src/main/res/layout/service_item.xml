@@ -41,4 +41,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ID vozila" />
+    <TextView
+        android:id="@+id/txtServiceId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"/>
 </LinearLayout>

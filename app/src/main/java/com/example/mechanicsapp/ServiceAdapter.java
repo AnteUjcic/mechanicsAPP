@@ -48,6 +48,7 @@ public class ServiceAdapter extends BaseAdapter {
         TextView txtNextKmService = convertView.findViewById(R.id.txtNextKmService);
         TextView txtOIB = convertView.findViewById(R.id.txtOIB);
         TextView txtVehicleId = convertView.findViewById(R.id.txtVehicleId);
+        TextView txtServiceId = convertView.findViewById(R.id.txtServiceId);
 
         Service service = serviceList.get(position);
 
@@ -58,6 +59,7 @@ public class ServiceAdapter extends BaseAdapter {
         txtNextKmService.setText(String.valueOf(service.nextKmService));
         txtOIB.setText(String.valueOf(service.oib));
         txtVehicleId.setText(String.valueOf(service.vehicleId));
+        txtServiceId.setText(String.valueOf(service.serviceId));
 
         return convertView;
     }
