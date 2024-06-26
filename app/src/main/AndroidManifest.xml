@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MechanicsAPP"
         tools:targetApi="31">
-
+        <activity android:name=".DeleteService"></activity>
         <activity android:name=".PregledServisa"></activity>
         <activity android:name=".UpisServisa"></activity>
         <activity android:name=".PregledVozila"></activity>

@@ -8,8 +8,8 @@
 
     <Button
         android:id="@+id/btnUpisServisa"
-        android:layout_width="196dp"
-        android:layout_height="56dp"
+        android:layout_width="194dp"
+        android:layout_height="60dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="34dp"
         android:text="Upis servisa"
@@ -18,8 +18,8 @@
 
     <Button
         android:id="@+id/btnUpisNovogVozila"
-        android:layout_width="198dp"
-        android:layout_height="55dp"
+        android:layout_width="194dp"
+        android:layout_height="59dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="32dp"
         android:text="Upis novog vozila"
@@ -28,32 +28,42 @@
 
     <Button
         android:id="@+id/btnPregledVozila"
-        android:layout_width="193dp"
+        android:layout_width="194dp"
         android:layout_height="57dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="36dp"
         android:text="Pregled vozila"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnUpisNovogVozila" />
 
     <Button
         android:id="@+id/btnPregledServisa"
-        android:layout_width="192dp"
+        android:layout_width="194dp"
         android:layout_height="57dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="42dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="36dp"
         android:text="Pregled Servisa"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPregledVozila" />
 
     <Button
         android:id="@+id/btnLogoutUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="248dp"
-        android:layout_marginTop="445dp"
+        android:layout_width="194dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="512dp"
         android:text="Logout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnDeleteService"
+        android:layout_width="194dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="36dp"
+        android:text="Brisanje servisa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPregledServisa" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,7 +2,7 @@ package com.example.mechanicsapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,7 +31,7 @@ public class DeleteUser extends AppCompatActivity {
         btnReturnToAdminFromDeleteUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DeleteUser.this, HomePage.class);
+                Intent intent = new Intent(DeleteUser.this, AdminScreen.class);
                 startActivity(intent);
             }
         });
